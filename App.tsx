@@ -21,8 +21,7 @@ export default function App() {
   const nextQuestion = () => {};
 
  const startTrivia =  useCallback(() => {
-   const d  = await fetchQuestions(TOTAL_QUESTIONS, Difficulty.EASY
-   setQuestions(d))
+
   }, []);
 
   const checkAnswer = () => {};
