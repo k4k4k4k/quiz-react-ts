@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { fetchQuestions } from './API';
 import './style.css';
 //components
@@ -20,7 +20,10 @@ export default function App() {
 
   const nextQuestion = () => {};
 
-  const startTrivia = () => {};
+ const startTrivia =  useCallback(() => {
+   const d  = await fetchQuestions(TOTAL_QUESTIONS, Difficulty.EASY
+   setQuestions(d))
+  }, []);
 
   const checkAnswer = () => {};
 
