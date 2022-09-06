@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 type Props = {
   question: string;
@@ -17,6 +17,7 @@ const QuestionCard: React.FC<Props> = ({
   questionNumber,
   totalQuestions,
 }) => {
+
   return (
     <div>
       <p>
