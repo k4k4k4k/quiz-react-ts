@@ -1,6 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { fetchQuestions } from './API';
 import './style.css';
-import QuestionCard from "./components/QuestionCard"
+//components
+import QuestionCard from './components/QuestionCard';
+//types
+import { Difficulty } from './API';
 
 const TOTAL_QUESTIONS = 10;
 
@@ -12,17 +16,13 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
-const nextQuestion = () => {
+  console.log(fetchQuestions(TOTAL_QUESTIONS, Difficulty.EASY));
 
-}
+  const nextQuestion = () => {};
 
-const startTrivia = () => {
+  const startTrivia = () => {};
 
-}
-
-const checkAnswer = () => {
-
-}
+  const checkAnswer = () => {};
 
   return (
     <div>
@@ -32,14 +32,14 @@ const checkAnswer = () => {
       <p>Score:</p>
       {/*  */}
       <p>Loading questions...</p>
-      <QuestionCard
-        questionNumber={number+1}
+      {/* <QuestionCard
+        questionNumber={number + 1}
         totalQuestions={TOTAL_QUESTIONS}
         question={questions[number].question}
         answer={questions[number].answers}
-        userAnswer={userAnswers? userAnswers[number] : undefined}
+        userAnswer={userAnswers ? userAnswers[number] : undefined}
         callback={checkAnswer}
-      />
+      /> */}
     </div>
   );
 }
