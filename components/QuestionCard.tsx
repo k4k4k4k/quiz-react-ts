@@ -11,20 +11,20 @@ type Props = {
 
 const QuestionCard: React.FC<Props> = ({
   question,
-  answers = [],
+  answers,
   callback,
   userAnswer,
   questionNumber,
   totalQuestions,
 }) => {
-
+console.log(answers, "answers")
   return (
     <div>
       <p>
         Question: {questionNumber}/{totalQuestions}
       </p>
       {answers.map(ans => <div>{ans}</div>)}
-      <button onClick={callback}>Next Question</button>
+      {/* <button onClick={callback}>Next Question</button> */}
     </div>
   );
 };

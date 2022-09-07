@@ -30,25 +30,26 @@ export default function App() {
   const startTrivia = async () => {
     setLoading(true);
     setGameOver(false);
-    // const newQuestions = await fetchQuestions(
-    //   TOTAL_QUESTIONS,
-    //   Difficulty.EASY
-    // );
-    // setQuestions(newQuestions);
-    // setScore(0);
-    // console.log("!!")
-    // setUserAnswers([]);
-    // setNumber(0);
-    // setLoading(false);
-
-    fetchQuestions(TOTAL_QUESTIONS, Difficulty.EASY).then((newQuestions) => {
-      setQuestions(newQuestions);
-      setScore(0);
-      console.log('!!');
-      setUserAnswers([]);
-      setNumber(0);
-      setLoading(false);
-    });
+    const newQuestions = await fetchQuestions(
+      TOTAL_QUESTIONS,
+      Difficulty.EASY
+    );
+    setQuestions(newQuestions);
+    console.log(newQuestions, "newQuestions")
+    console.log(questions, "questions")
+    setScore(0);
+    console.log("!!")
+    setUserAnswers([]);
+    setNumber(0);
+    setLoading(false);
+    console.log(questions, "questions")
+    // fetchQuestions(TOTAL_QUESTIONS, Difficulty.EASY).then((newQuestions) => {
+    //   setQuestions(newQuestions);
+    //   setScore(0);
+    //   setUserAnswers([]);
+    //   setNumber(0);
+    //   setLoading(false);
+    
   };
 
   const checkAnswer = () => {};
@@ -62,12 +63,13 @@ export default function App() {
       {!gameOver && <p>Score:</p>}
 
       {loading && <p>Loading questions...</p>}
+      
       {!gameOver && !loading && (
         <QuestionCard
           questionNumber={number + 1}
           totalQuestions={TOTAL_QUESTIONS}
           question={questions[number].question}
-          answer={questions[number].answers}
+          answers={questions[number].answers}
           userAnswer={userAnswers ? userAnswers[number] : undefined}
           callback={checkAnswer}
         />
