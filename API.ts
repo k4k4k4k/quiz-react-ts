@@ -9,7 +9,7 @@ export type Question = {
   type: string;
 };
 
-export type QuestionState = Question & { answers: string[] }; //unite correct & incorrect answers - to have a common array
+export type QuestionState = Question & { answer: string[] }; //unite correct & incorrect answers - to have a common array
 
 export enum Difficulty {
   EASY = 'easy',

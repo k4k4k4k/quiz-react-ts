@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 type Props = {
   question: string;
@@ -17,14 +17,19 @@ const QuestionCard: React.FC<Props> = ({
   questionNumber,
   totalQuestions,
 }) => {
-console.log(answers, "answers")
+  console.log(answers, 'answers');
   return (
     <div>
       <p>
         Question: {questionNumber}/{totalQuestions}
       </p>
-      {answers.map(ans => <div>{ans}</div>)}
-      {/* <button onClick={callback}>Next Question</button> */}
+      {console.log('!', answers)}
+      {answers.map((ans) => (
+        <div key={ans}>
+        <button disabled={userAnswer} value = {ans} onClick={callback}>{ans}</button>
+        </div>
+      ))}
+      {/* {<button onClick={callback}>Next Question</button>}  */}
     </div>
   );
 };
