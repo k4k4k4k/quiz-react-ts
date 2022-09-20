@@ -1,0 +1,36 @@
+html {
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1661923595272-0118513b1c9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1555&q=80');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.Card {
+  /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+}
+
+.Card * {
+  margin:  auto 0;
+}
+
+.App button{
+  border: 0px;
+  border-radius: 4px;
+  margin-bottom: 2px;
+  align-self: center;
+}
+
